@@ -5,6 +5,7 @@ import { MaterialModule } from '../../shared/material.module';
 import { UserService } from '../../core/service/user.service';
 import { Register } from '../../core/models/Register';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
+import { Login } from '../../core/models/Login';
 
 @Component({
   selector: 'app-register',
@@ -46,6 +47,18 @@ export class RegisterComponent implements OnInit {
       login: this.registerForm.get('login')?.value,
       password: this.registerForm.get('password')?.value
     };
+    const loginUser: Login = {
+      login: this.registerForm.get('login')?.value,
+      password: this.registerForm.get('password')?.value
+    };
+    this.userService.login(loginUser)
+     .pipe(takeUntilDestroyed(this.destroyRef))
+      .subscribe(
+      () => {
+        alert('SUCCESS!! :-)');
+        // TODO : router l'utilisateur vers la page de login
+      },
+    );
     this.userService.register(registerUser)
       .pipe(takeUntilDestroyed(this.destroyRef))
       .subscribe(

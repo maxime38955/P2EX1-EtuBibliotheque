@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 public class JwtService {
 
     public String generateToken(UserDetails userDetails) {
-        return null; // TODO
+        return "2"; // TODO
     }
 
 }

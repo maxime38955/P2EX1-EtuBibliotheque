@@ -24,7 +24,7 @@ public class UserService {
     public void register(User user) {
         Assert.notNull(user, "User must not be null");
         log.info("Registering new user");
-
+        
         Optional<User> optionalUser = userRepository.findByLogin(user.getLogin());
         if (optionalUser.isPresent()) {
             throw new IllegalArgumentException("User with login " + user.getLogin() + " already exists");
@@ -34,8 +34,9 @@ public class UserService {
     }
 
     public String login(String login, String password) {
-        Assert.notNull(login, "Login must not be null");
+        Assert.notNull(login, "Login must be null");
         Assert.notNull(password, "Password must not be null");
+        log.info("Login : " + login + " password :" + password);
         Optional<User> user = userRepository.findByLogin(login);
         if (user.isPresent() && passwordEncoder.matches(password, password)) {
             UserDetails userDetails = org.springframework.security.core.userdetails.User.builder()
