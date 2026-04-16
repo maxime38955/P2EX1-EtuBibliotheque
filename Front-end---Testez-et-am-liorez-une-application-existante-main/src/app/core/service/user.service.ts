@@ -15,7 +15,7 @@ export class UserService {
   }
 
   login(login: Login): Observable<Object> {
-    return this.httpClient.post('/api/login', login);
-    responseType: 'text' // Très important car le JWT est un String brut
+    return this.httpClient.post('/api/login', login, {responseType: 'text'});
+    
   }
 }

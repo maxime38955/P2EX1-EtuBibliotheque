@@ -33,17 +33,46 @@ public class UserService {
         userRepository.save(user);
     }
 
+//    public String login(String login, String password) {
+//        Assert.notNull(login, "Login must be null");
+//        Assert.notNull(password, "Password must not be null");
+//        log.info("Login : " + login + " password :" + password);
+//        Optional<User> user = userRepository.findByLogin(login);
+//        if (user.isPresent() && passwordEncoder.matches(password, password)) {
+//            UserDetails userDetails = org.springframework.security.core.userdetails.User.builder()
+//                    .username(login).build();
+//            return jwtService.generateToken(userDetails);
+//        } else {
+//            throw new IllegalArgumentException("Invalid credentials");
+//        }
+//    }
+    
     public String login(String login, String password) {
-        Assert.notNull(login, "Login must be null");
+        // 1. Vérifications de base
+        Assert.notNull(login, "Login must not be null"); // Correction du message
         Assert.notNull(password, "Password must not be null");
-        log.info("Login : " + login + " password :" + password);
-        Optional<User> user = userRepository.findByLogin(login);
-        if (user.isPresent() && passwordEncoder.matches(password, password)) {
+        
+        log.info("Tentative de connexion pour l'utilisateur : {}", login); // On ne logue plus le password !
+
+        // 2. Recherche de l'utilisateur
+        Optional<User> userOptional = userRepository.findByLogin(login);
+
+        // 3. Vérification de l'existence et du MOT DE PASSE
+        if (userOptional.isPresent() && passwordEncoder.matches(password, userOptional.get().getPassword())) {
+            
+            User user = userOptional.get();
+            
+            // On crée les UserDetails pour le JWT
             UserDetails userDetails = org.springframework.security.core.userdetails.User.builder()
-                    .username(login).build();
+                    .username(user.getLogin())
+                    .password(user.getPassword()) // Recommandé pour la structure UserDetails
+                    .authorities("ROLE_USER")    // On peut ajouter des rôles ici
+                    .build();
+
             return jwtService.generateToken(userDetails);
         } else {
-            throw new IllegalArgumentException("Invalid credentials");
+            // Si l'utilisateur n'existe pas OU si le mot de passe est faux
+            throw new IllegalArgumentException("Identifiants invalides");
         }
     }
 
