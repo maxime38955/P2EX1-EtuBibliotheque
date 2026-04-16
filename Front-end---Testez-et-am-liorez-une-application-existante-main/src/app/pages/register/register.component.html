@@ -1,5 +1,5 @@
 <div class="card m-3">
-  <h5 class="card-header">Registration Form</h5>
+  <h5 class="card-header Register" style="background-color: rgb(65, 89, 224); color: white">Registration Form</h5>
   <div class="card-body">
     <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
       <div class="form-row">
@@ -73,6 +73,9 @@
         <button class="btn btn-primary mr-1">Register</button>
         <button class="btn btn-secondary" type="reset" (click)="onReset()">
           Cancel
+        </button>
+           <button class="btn btn-info ml-1"   (click)="onLogin()">
+          Go to Login
         </button>
       </div>
     </form>

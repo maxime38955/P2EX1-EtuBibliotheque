@@ -8,30 +8,28 @@ import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { Login } from '../../core/models/Login';
 import { Router } from '@angular/router';
 
-
 @Component({
-  selector: 'app-register',
+  selector: 'app-login',
   imports: [CommonModule, MaterialModule],
-  templateUrl: './register.component.html',
+  templateUrl: './login.component.html',
   standalone: true,
-  styleUrl: './register.component.css'
+  styleUrl: './login.component.css'
 })
-export class RegisterComponent implements OnInit {
-  private userService = inject(UserService);
+export class LoginComponent {
+ private userService = inject(UserService);
   private formBuilder = inject(FormBuilder);
   private destroyRef = inject(DestroyRef);
   registerForm: FormGroup = new FormGroup({});
   submitted: boolean = false;
-   constructor(private router: Router){
+
+  constructor(private router: Router){
     
    } 
-
+ 
 
   ngOnInit() {
     this.registerForm = this.formBuilder.group(
       {
-        firstName: ['', Validators.required],
-        lastName: ['', Validators.required],
         login: ['', Validators.required],
         password: ['', Validators.required]
       },
@@ -47,21 +45,22 @@ export class RegisterComponent implements OnInit {
     if (this.registerForm.invalid) {
       return;
     }
-    const registerUser: Register = {
-      firstName: this.registerForm.get('firstName')?.value,
-      lastName: this.registerForm.get('lastName')?.value,
+  
+    const loginUser: Login = {
       login: this.registerForm.get('login')?.value,
       password: this.registerForm.get('password')?.value
     };
-
-    this.userService.register(registerUser)
-      .pipe(takeUntilDestroyed(this.destroyRef))
+    this.userService.login(loginUser)
+     .pipe(takeUntilDestroyed(this.destroyRef))
       .subscribe(
       () => {
-        
-         this.router.navigateByUrl(`login`);
+        alert('SUCCESS!! :-)');
+         
+        // TODO : router l'utilisateur vers la page de login
       },
+      
     );
+
      
   }
 
@@ -70,8 +69,8 @@ export class RegisterComponent implements OnInit {
     this.registerForm.reset();
   }
 
-   onLogin(): void {
+   onRegister(): void {
     this.submitted = false;
-     this.router.navigateByUrl(`login`);
+     this.router.navigateByUrl(`register`);
   }
 }
