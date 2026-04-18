@@ -1,0 +1,27 @@
+package com.openclassrooms.etudiant.mapper;
+
+import com.openclassrooms.etudiant.dto.RegisterDTO;
+
+import com.openclassrooms.etudiant.entities.User;
+import org.mapstruct.Mapper;
+import org.mapstruct.Mapping;
+import org.mapstruct.ReportingPolicy;
+
+@Mapper(componentModel = "spring",
+unmappedTargetPolicy = ReportingPolicy.ERROR)
+public interface UserDtoMapper {
+
+// Cas 1 : Inscription (on ignore l'ID car la DB va le générer)
+@Mapping(target = "id", ignore = true)
+@Mapping(target = "created_at", ignore = true)
+@Mapping(target = "updated_at", ignore = true)
+@Mapping(target = "authorities", ignore = true)
+User toEntity(RegisterDTO registerDTO);
+
+// Cas 2 : Mise à jour (on utilise l'ID du DTO)
+@Mapping(target = "created_at", ignore = true) // On ne change pas la date de création
+@Mapping(target = "updated_at", ignore = true) // Hibernate s'en occupe
+@Mapping(target = "authorities", ignore = true)
+void updateEntityFromDto(UserUpdateDTO updateDTO, @MappingTarget User user);
+
+}

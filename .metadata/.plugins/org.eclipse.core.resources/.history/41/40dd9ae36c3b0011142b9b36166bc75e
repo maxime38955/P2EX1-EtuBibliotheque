@@ -1,0 +1,21 @@
+package com.openclassrooms.etudiant.dto;
+
+import java.sql.Date;
+
+import jakarta.validation.constraints.NotBlank;
+import lombok.Data;
+
+@Data
+public class UpdateDTO {
+	@NotBlank
+    private String firstName;
+	@NotBlank
+    private String lastName;
+	@NotBlank
+    private String login;
+	@NotBlank
+    private String password;
+	@NotBlank
+	private Date updated_at;
+
+}

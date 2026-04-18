@@ -43,7 +43,6 @@ INDEX VERSION 1.134+/Users/maxime/Documents/workspace-spring-tools-for-eclipse-5
 3183710105.index
 3104447624.index
 1565961636.index
-324280112.index
 4134458167.index
 932111919.index
 1451770970.index

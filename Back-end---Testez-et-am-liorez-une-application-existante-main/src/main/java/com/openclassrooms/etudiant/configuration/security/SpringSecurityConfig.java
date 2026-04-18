@@ -15,12 +15,15 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 
+
 @Configuration
 @EnableWebSecurity
 public class SpringSecurityConfig {
 
     @Autowired
     private CustomUserDetailService customUserDetailService;
+    @Autowired
+    private JwtAuthenticationFilter jwtAuthFilter; // Remplace par le nom exact de ton fichier de filtre
 
     @Bean
     public DaoAuthenticationProvider authenticationProvider() {
@@ -54,6 +57,7 @@ public class SpringSecurityConfig {
                         // Others protected routes will be added here.
                         .anyRequest().authenticated()
                 )
+                .addFilterBefore(jwtAuthFilter, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter.class)
                 // .addFilterBefore(authenticationFilter, UsernamePasswordAuthenticationFilter.class)
                 .exceptionHandling(exceptionHandling -> exceptionHandling.authenticationEntryPoint(
                         (request, response, exception) -> {
