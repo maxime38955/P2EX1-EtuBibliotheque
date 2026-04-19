@@ -1,0 +1,33 @@
+<div class="list-container">
+  <h2>Liste des étudiants</h2>
+
+  <table>
+    <thead>
+      <tr>
+    
+        <th>Prénom</th>
+        <th>Nom</th>
+        <th>Login</th>
+        <th>Actions</th> </tr>
+    </thead>
+    <tbody>
+      @for (student of students; track student.id) {
+        <tr>
+          
+          <td>{{ student.firstName }}</td>
+          <td>{{ student.lastName }}</td>
+          <td>{{ student.login }}</td>
+          <td>
+            <button class=" btn-primary" (click)="onViewDetails(student)" >
+              Détail
+            </button>
+          </td>
+        </tr>
+      } @empty {
+        <tr>
+          <td colspan="5">Aucun étudiant trouvé.</td>
+        </tr>
+      }
+    </tbody>
+  </table>
+</div>

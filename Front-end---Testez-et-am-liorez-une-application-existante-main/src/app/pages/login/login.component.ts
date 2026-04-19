@@ -41,6 +41,8 @@ export class LoginComponent {
   }
 
   onSubmit(): void {
+
+  
     this.submitted = true;
     if (this.registerForm.invalid) {
       return;
@@ -50,16 +52,16 @@ export class LoginComponent {
       login: this.registerForm.get('login')?.value,
       password: this.registerForm.get('password')?.value
     };
-    this.userService.login(loginUser)
-     .pipe(takeUntilDestroyed(this.destroyRef))
-      .subscribe(
-      () => {
-        alert('SUCCESS!! :-)');
-         
-        // TODO : router l'utilisateur vers la page de login
+      this.userService.login(this.registerForm.value).subscribe({
+      next: (token: string) => {
+        localStorage.setItem('token', token); // Stockage du JWT
+        console.log("Connecté avec succès");
+        this.router.navigateByUrl(`list`);
       },
-      
-    );
+      error: (err) => {
+        console.error("Erreur de login", err);
+      }
+    });
 
      
   }
@@ -73,4 +75,8 @@ export class LoginComponent {
     this.submitted = false;
      this.router.navigateByUrl(`register`);
   }
+
+
+
+  
 }
