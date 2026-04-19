@@ -59,6 +59,7 @@ export class LoginComponent {
         this.router.navigateByUrl(`list`);
       },
       error: (err) => {
+          alert('Identifiant incorecte !');
         console.error("Erreur de login", err);
       }
     });
