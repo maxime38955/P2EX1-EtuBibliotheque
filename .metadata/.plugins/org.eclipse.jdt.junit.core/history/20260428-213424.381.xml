@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="Rerun readListSuccessful()" project="Back-end---Testez-et-am-liorez-une-application-existante-main" tests="1" started="1" failures="0" errors="0" ignored="0">
+  <testsuite name="com.openclassrooms.etudiant.controller.UserControllerTest" time="0.406" displayname="UserControllerTest" uniqueid="[engine:junit-jupiter]/[class:com.openclassrooms.etudiant.controller.UserControllerTest]">
+    <testcase name="readListSuccessful" classname="com.openclassrooms.etudiant.controller.UserControllerTest" time="0.406" displayname="readListSuccessful()" uniqueid="[engine:junit-jupiter]/[class:com.openclassrooms.etudiant.controller.UserControllerTest]/[method:readListSuccessful()]"/>
+  </testsuite>
+</testrun>

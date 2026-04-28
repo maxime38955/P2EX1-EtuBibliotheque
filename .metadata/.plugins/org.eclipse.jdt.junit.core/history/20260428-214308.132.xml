@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="UserControllerTest" project="Back-end---Testez-et-am-liorez-une-application-existante-main" tests="7" started="7" failures="1" errors="0" ignored="0">
+  <testsuite name="com.openclassrooms.etudiant.controller.UserControllerTest" time="0.988" displayname="UserControllerTest" uniqueid="[engine:junit-jupiter]/[class:com.openclassrooms.etudiant.controller.UserControllerTest]">
+    <testcase name="readUserSuccessful" classname="com.openclassrooms.etudiant.controller.UserControllerTest" time="0.415" displayname="readUserSuccessful()" uniqueid="[engine:junit-jupiter]/[class:com.openclassrooms.etudiant.controller.UserControllerTest]/[method:readUserSuccessful()]"/>
+    <testcase name="deleteUserSuccessful" classname="com.openclassrooms.etudiant.controller.UserControllerTest" time="0.085" displayname="deleteUserSuccessful()" uniqueid="[engine:junit-jupiter]/[class:com.openclassrooms.etudiant.controller.UserControllerTest]/[method:deleteUserSuccessful()]"/>
+    <testcase name="deleteUserNotFound" classname="com.openclassrooms.etudiant.controller.UserControllerTest" time="0.011" displayname="deleteUserNotFound()" uniqueid="[engine:junit-jupiter]/[class:com.openclassrooms.etudiant.controller.UserControllerTest]/[method:deleteUserNotFound()]"/>
+    <testcase name="readListSuccessful" classname="com.openclassrooms.etudiant.controller.UserControllerTest" time="0.146" displayname="readListSuccessful()" uniqueid="[engine:junit-jupiter]/[class:com.openclassrooms.etudiant.controller.UserControllerTest]/[method:readListSuccessful()]"/>
+    <testcase name="registerUserSuccessful" classname="com.openclassrooms.etudiant.controller.UserControllerTest" time="0.088" displayname="registerUserSuccessful()" uniqueid="[engine:junit-jupiter]/[class:com.openclassrooms.etudiant.controller.UserControllerTest]/[method:registerUserSuccessful()]"/>
+    <testcase name="updateUserNameSuccessful" classname="com.openclassrooms.etudiant.controller.UserControllerTest" time="0.093" displayname="updateUserNameSuccessful()" uniqueid="[engine:junit-jupiter]/[class:com.openclassrooms.etudiant.controller.UserControllerTest]/[method:updateUserNameSuccessful()]">
+      <failure>java.lang.AssertionError: Status expected:&lt;200&gt; but was:&lt;500&gt;
+	at org.springframework.test.util.AssertionErrors.fail(AssertionErrors.java:61)
+	at org.springframework.test.util.AssertionErrors.assertEquals(AssertionErrors.java:128)
+	at org.springframework.test.web.servlet.result.StatusResultMatchers.lambda$matcher$9(StatusResultMatchers.java:640)
+	at org.springframework.test.web.servlet.MockMvc$1.andExpect(MockMvc.java:214)
+	at com.openclassrooms.etudiant.controller.UserControllerTest.updateUserNameSuccessful(UserControllerTest.java:127)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+
+</failure>
+    </testcase>
+    <testcase name="loginSuccessful" classname="com.openclassrooms.etudiant.controller.UserControllerTest" time="0.149" displayname="loginSuccessful()" uniqueid="[engine:junit-jupiter]/[class:com.openclassrooms.etudiant.controller.UserControllerTest]/[method:loginSuccessful()]"/>
+  </testsuite>
+</testrun>

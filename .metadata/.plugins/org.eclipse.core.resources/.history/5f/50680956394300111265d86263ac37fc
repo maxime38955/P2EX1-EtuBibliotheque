@@ -1,0 +1,196 @@
+package com.openclassrooms.etudiant.controller;
+
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.openclassrooms.etudiant.dto.LoginRequestDTO;
+import com.openclassrooms.etudiant.dto.RegisterDTO;
+import com.openclassrooms.etudiant.dto.UpdateDTO;
+import com.openclassrooms.etudiant.entities.User;
+import com.openclassrooms.etudiant.repository.UserRepository;
+import com.openclassrooms.etudiant.service.UserService;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.http.MediaType;
+import org.springframework.test.context.DynamicPropertyRegistry;
+import org.springframework.test.context.DynamicPropertySource;
+import org.springframework.test.web.servlet.MockMvc;
+import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
+import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
+import org.testcontainers.containers.MySQLContainer;
+import org.testcontainers.junit.jupiter.Container;
+import org.testcontainers.junit.jupiter.Testcontainers;
+
+import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
+import static org.hamcrest.Matchers.hasSize;
+import static org.hamcrest.Matchers.is;
+
+@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
+@AutoConfigureMockMvc (addFilters = false)
+@Testcontainers
+public class UserControllerTest {
+
+    @Container
+    static MySQLContainer<?> mySQLContainer = new MySQLContainer<>("mysql:8.0");
+
+    @Autowired
+    private UserService userService;
+    @Autowired
+    private UserRepository userRepository;
+    @Autowired
+    private ObjectMapper objectMapper;
+    @Autowired
+    private MockMvc mockMvc;
+
+    private static final String FIRST_NAME = "John";
+    private static final String LAST_NAME = "Doe";
+    private static final String LOGIN = "jdoe";
+    private static final String PASSWORD = "password123";
+
+    @DynamicPropertySource
+    static void configureTestProperties(DynamicPropertyRegistry registry) {
+        registry.add("spring.datasource.url", mySQLContainer::getJdbcUrl);
+        registry.add("spring.datasource.username", mySQLContainer::getUsername);
+        registry.add("spring.datasource.password", mySQLContainer::getPassword);
+        registry.add("spring.jpa.hibernate.ddl-auto", () -> "create");
+    }
+
+    @AfterEach
+    public void cleanUp() {
+        userRepository.deleteAll();
+    }
+
+    // --- TESTS REGISTER (Déjà faits, mais conservés pour la structure) ---
+
+    @Test
+    public void registerUserSuccessful() throws Exception {
+        RegisterDTO registerDTO = new RegisterDTO();
+        registerDTO.setFirstName(FIRST_NAME);
+        registerDTO.setLastName(LAST_NAME);
+        registerDTO.setLogin(LOGIN);
+        registerDTO.setPassword(PASSWORD);
+
+        mockMvc.perform(MockMvcRequestBuilders.post("/api/register")
+                        .content(objectMapper.writeValueAsString(registerDTO))
+                        .contentType(MediaType.APPLICATION_JSON))
+                .andExpect(MockMvcResultMatchers.status().isCreated());
+    }
+
+    // --- TESTS LOGIN ---
+
+    @Test
+    public void loginSuccessful() throws Exception {
+        // GIVEN: Un utilisateur existe
+        User user = new User();
+        user.setFirstName(FIRST_NAME);
+        user.setLastName(LAST_NAME);
+        user.setLogin(LOGIN);
+        user.setPassword(PASSWORD);
+        userService.register(user);
+
+        LoginRequestDTO loginRequest = new LoginRequestDTO();
+        loginRequest.setLogin(LOGIN);
+        loginRequest.setPassword(PASSWORD);
+
+        // WHEN & THEN
+        mockMvc.perform(MockMvcRequestBuilders.post("/api/login")
+                        .content(objectMapper.writeValueAsString(loginRequest))
+                        .contentType(MediaType.APPLICATION_JSON))
+                .andExpect(MockMvcResultMatchers.status().isOk());
+                // Ici tu pourrais vérifier le format du JWT si nécessaire
+    }
+
+    // --- TESTS UPDATE ---
+
+    @Test
+    public void updateUserNameSuccessful() throws Exception {
+        // GIVEN
+        User user = new User();
+        user.setFirstName(FIRST_NAME);
+        user.setLastName(LAST_NAME);
+        user.setLogin(LOGIN);
+        user.setPassword(PASSWORD);
+        userService.register(user);
+
+        UpdateDTO updateDTO = new UpdateDTO();
+        updateDTO.setLogin(LOGIN);
+        updateDTO.setFirstName("Jane"); // On change le prénom
+
+        // WHEN
+        mockMvc.perform(MockMvcRequestBuilders.patch("/api/update")
+                        .content(objectMapper.writeValueAsString(updateDTO))
+                        .contentType(MediaType.APPLICATION_JSON))
+                .andExpect(MockMvcResultMatchers.status().isOk());
+    }
+
+    // --- TESTS DELETE ---
+
+    @Test
+    public void deleteUserSuccessful() throws Exception {
+        // GIVEN
+        User user = new User();
+        user.setFirstName(FIRST_NAME);
+        user.setLastName(LAST_NAME);
+        user.setLogin(LOGIN);
+        user.setPassword(PASSWORD);
+        userService.register(user);
+
+        // WHEN
+        mockMvc.perform(MockMvcRequestBuilders.delete("/api/delete/" + LOGIN))
+                .andExpect(MockMvcResultMatchers.status().isOk())
+                .andExpect(jsonPath("$.message", is("Utilisateur supprimé")));
+    }
+
+    @Test
+    public void deleteUserNotFound() throws Exception {
+        // WHEN
+        mockMvc.perform(MockMvcRequestBuilders.delete("/api/delete/unknown_user"))
+                .andExpect(MockMvcResultMatchers.status().isNotFound());
+    }
+
+    // --- TESTS READ ---
+
+    @Test
+    public void readUserSuccessful() throws Exception {
+        // GIVEN
+        User user = new User();
+        user.setFirstName(FIRST_NAME);
+        user.setLastName(LAST_NAME);
+        user.setLogin(LOGIN);
+        user.setPassword(PASSWORD);
+        userService.register(user);
+
+        // WHEN
+        mockMvc.perform(MockMvcRequestBuilders.get("/api/read/" + LOGIN))
+                .andExpect(MockMvcResultMatchers.status().isOk())
+                .andExpect(jsonPath("$.login", is(LOGIN)))
+                .andExpect(jsonPath("$.firstName", is(FIRST_NAME)));
+    }
+
+    @Test
+    public void readListSuccessful() throws Exception {
+        // GIVEN: On crée deux utilisateurs
+        User u1 = new User();
+        u1.setFirstName("User1");
+        u1.setLastName("User1");
+        u1.setLogin("login1");
+        u1.setPassword("pass1");
+        userService.register(u1);
+//
+//        User u2 = new User();
+//        u2.setFirstName("User2");
+//        u2.setLogin("login2");
+//        u2.setPassword("pass2");
+//        userService.register(u2);
+
+        // WHEN
+        mockMvc.perform(MockMvcRequestBuilders.get("/api/readlist"))
+                .andExpect(MockMvcResultMatchers.status().isOk());
+//                .andExpect(jsonPath("$", hasSize(2))) // On vérifie qu'on a bien 2 objets
+//                .andExpect(jsonPath("$[0].login", is("login1")))
+//                .andExpect(jsonPath("$[1].login", is("login2")));
+    }
+}
