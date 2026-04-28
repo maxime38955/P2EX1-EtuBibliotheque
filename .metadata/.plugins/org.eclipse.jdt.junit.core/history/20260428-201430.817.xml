@@ -1,0 +1,349 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="java (1)" project="Back-end---Testez-et-am-liorez-une-application-existante-main" tests="6" started="3" failures="0" errors="4" ignored="0">
+  <testsuite name="com.openclassrooms.etudiant.controller.UserControllerTest" incomplete="true" displayname="UserControllerTest" uniqueid="[engine:junit-jupiter]/[class:com.openclassrooms.etudiant.controller.UserControllerTest]">
+    <error>java.lang.IllegalStateException: Could not find a valid Docker environment. Please see logs and check configuration
+	at org.testcontainers.dockerclient.DockerClientProviderStrategy.lambda$getFirstValidStrategy$7(DockerClientProviderStrategy.java:277)
+	at java.base/java.util.Optional.orElseThrow(Optional.java:403)
+	at org.testcontainers.dockerclient.DockerClientProviderStrategy.getFirstValidStrategy(DockerClientProviderStrategy.java:268)
+	at org.testcontainers.DockerClientFactory.getOrInitializeStrategy(DockerClientFactory.java:152)
+	at org.testcontainers.DockerClientFactory.client(DockerClientFactory.java:194)
+	at org.testcontainers.DockerClientFactory$1.getDockerClient(DockerClientFactory.java:106)
+	at com.github.dockerjava.api.DockerClientDelegate.authConfig(DockerClientDelegate.java:109)
+	at org.testcontainers.containers.GenericContainer.start(GenericContainer.java:329)
+	at org.testcontainers.junit.jupiter.TestcontainersExtension$StoreAdapter.start(TestcontainersExtension.java:276)
+	at org.testcontainers.junit.jupiter.TestcontainersExtension$StoreAdapter.access$200(TestcontainersExtension.java:263)
+	at org.testcontainers.junit.jupiter.TestcontainersExtension.lambda$null$4(TestcontainersExtension.java:83)
+	at org.testcontainers.junit.jupiter.TestcontainersExtension.lambda$startContainers$5(TestcontainersExtension.java:83)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+	at org.testcontainers.junit.jupiter.TestcontainersExtension.startContainers(TestcontainersExtension.java:83)
+	at org.testcontainers.junit.jupiter.TestcontainersExtension.beforeAll(TestcontainersExtension.java:57)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+
+</error>
+    <testcase name="registerUserWithoutRequiredData" classname="com.openclassrooms.etudiant.controller.UserControllerTest" incomplete="true" displayname="registerUserWithoutRequiredData()" uniqueid="[engine:junit-jupiter]/[class:com.openclassrooms.etudiant.controller.UserControllerTest]/[method:registerUserWithoutRequiredData()]"/>
+    <testcase name="registerAlreadyExistUser" classname="com.openclassrooms.etudiant.controller.UserControllerTest" incomplete="true" displayname="registerAlreadyExistUser()" uniqueid="[engine:junit-jupiter]/[class:com.openclassrooms.etudiant.controller.UserControllerTest]/[method:registerAlreadyExistUser()]"/>
+    <testcase name="registerUserSuccessful" classname="com.openclassrooms.etudiant.controller.UserControllerTest" incomplete="true" displayname="registerUserSuccessful()" uniqueid="[engine:junit-jupiter]/[class:com.openclassrooms.etudiant.controller.UserControllerTest]/[method:registerUserSuccessful()]"/>
+  </testsuite>
+  <testsuite name="com.openclassrooms.etudiant.service.UserServiceTest" time="0.003" displayname="UserServiceTest" uniqueid="[engine:junit-jupiter]/[class:com.openclassrooms.etudiant.service.UserServiceTest]">
+    <testcase name="test_create_null_user_throws_IllegalArgumentException" classname="com.openclassrooms.etudiant.service.UserServiceTest" time="0.002" displayname="test_create_null_user_throws_IllegalArgumentException()" uniqueid="[engine:junit-jupiter]/[class:com.openclassrooms.etudiant.service.UserServiceTest]/[method:test_create_null_user_throws_IllegalArgumentException()]">
+      <error>org.mockito.exceptions.misusing.InjectMocksException: 
+Cannot instantiate @InjectMocks field named 'userService' of type 'class com.openclassrooms.etudiant.service.UserService'.
+You haven't provided the instance at field declaration so I tried to construct the instance.
+However the constructor or the initialization block threw an exception : Unresolved compilation problems: 
+	The blank final field userRepository may not have been initialized
+	The blank final field passwordEncoder may not have been initialized
+	The blank final field jwtService may not have been initialized
+	log cannot be resolved
+	The method getLogin() is undefined for the type User
+	The method getLogin() is undefined for the type User
+	The method setPassword(String) is undefined for the type User
+	log cannot be resolved
+	The method getLogin() is undefined for the type User
+	log cannot be resolved
+	log cannot be resolved
+	log cannot be resolved
+	log cannot be resolved
+	log cannot be resolved
+	The method getId() is undefined for the type User
+	The method getId() is undefined for the type User
+	The method getFirstName() is undefined for the type User
+	The method getLastName() is undefined for the type User
+	The method getLogin() is undefined for the type User
+	The method getLogin() is undefined for the type User
+	The method getLogin() is undefined for the type User
+	The method getLogin() is undefined for the type User
+	The method getLogin() is undefined for the type User
+	The method setUpdated_at(LocalDateTime) is undefined for the type User
+	The method setPassword(String) is undefined for the type User
+	log cannot be resolved
+	log cannot be resolved
+
+
+	at org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener.initMocks(MockitoTestExecutionListener.java:94)
+	at org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener.prepareTestInstance(MockitoTestExecutionListener.java:68)
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:260)
+	at org.springframework.test.context.junit.jupiter.SpringExtension.postProcessTestInstance(SpringExtension.java:159)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:186)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:214)
+	at java.base/java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:214)
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1716)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:570)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:560)
+	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:153)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:176)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:265)
+	at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:632)
+	at java.base/java.util.Optional.orElseGet(Optional.java:364)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+Caused by: java.lang.Error: Unresolved compilation problems: 
+	The blank final field userRepository may not have been initialized
+	The blank final field passwordEncoder may not have been initialized
+	The blank final field jwtService may not have been initialized
+	log cannot be resolved
+	The method getLogin() is undefined for the type User
+	The method getLogin() is undefined for the type User
+	The method setPassword(String) is undefined for the type User
+	log cannot be resolved
+	The method getLogin() is undefined for the type User
+	log cannot be resolved
+	log cannot be resolved
+	log cannot be resolved
+	log cannot be resolved
+	log cannot be resolved
+	The method getId() is undefined for the type User
+	The method getId() is undefined for the type User
+	The method getFirstName() is undefined for the type User
+	The method getLastName() is undefined for the type User
+	The method getLogin() is undefined for the type User
+	The method getLogin() is undefined for the type User
+	The method getLogin() is undefined for the type User
+	The method getLogin() is undefined for the type User
+	The method getLogin() is undefined for the type User
+	The method setUpdated_at(LocalDateTime) is undefined for the type User
+	The method setPassword(String) is undefined for the type User
+	log cannot be resolved
+	log cannot be resolved
+
+	at com.openclassrooms.etudiant.service.UserService.&lt;init&gt;(UserService.java:25)
+	at java.base/java.lang.invoke.MethodHandle.invokeWithArguments(MethodHandle.java:735)
+	at org.mockito.internal.util.reflection.InstrumentationMemberAccessor$Dispatcher$ByteBuddy$Yr7o1hS3.invokeWithArguments(Unknown Source)
+	at org.mockito.internal.util.reflection.InstrumentationMemberAccessor.lambda$newInstance$0(InstrumentationMemberAccessor.java:213)
+	at org.mockito.internal.util.reflection.InstrumentationMemberAccessor.newInstance(InstrumentationMemberAccessor.java:202)
+	at org.mockito.internal.util.reflection.InstrumentationMemberAccessor.newInstance(InstrumentationMemberAccessor.java:175)
+	at org.mockito.internal.util.reflection.ModuleMemberAccessor.newInstance(ModuleMemberAccessor.java:42)
+	at org.mockito.internal.util.reflection.FieldInitializer$NoArgConstructorInstantiator.instantiate(FieldInitializer.java:203)
+	at org.mockito.internal.util.reflection.FieldInitializer.acquireFieldInstance(FieldInitializer.java:146)
+	at org.mockito.internal.util.reflection.FieldInitializer.initialize(FieldInitializer.java:91)
+	at org.mockito.internal.configuration.injection.PropertyAndSetterInjection.initializeInjectMocksField(PropertyAndSetterInjection.java:93)
+	at org.mockito.internal.configuration.injection.PropertyAndSetterInjection.processInjection(PropertyAndSetterInjection.java:73)
+	at org.mockito.internal.configuration.injection.MockInjectionStrategy.process(MockInjectionStrategy.java:68)
+	at org.mockito.internal.configuration.injection.MockInjectionStrategy.relayProcessToNextStrategy(MockInjectionStrategy.java:91)
+	at org.mockito.internal.configuration.injection.MockInjectionStrategy.process(MockInjectionStrategy.java:71)
+	at org.mockito.internal.configuration.injection.MockInjectionStrategy.relayProcessToNextStrategy(MockInjectionStrategy.java:91)
+	at org.mockito.internal.configuration.injection.MockInjectionStrategy.process(MockInjectionStrategy.java:71)
+	at org.mockito.internal.configuration.injection.MockInjection$OngoingMockInjection.apply(MockInjection.java:88)
+	at org.mockito.internal.configuration.DefaultInjectionEngine.injectMocksOnFields(DefaultInjectionEngine.java:26)
+	at org.mockito.internal.configuration.InjectingAnnotationEngine.injectCloseableMocks(InjectingAnnotationEngine.java:107)
+	at org.mockito.internal.configuration.InjectingAnnotationEngine.process(InjectingAnnotationEngine.java:48)
+	at org.mockito.MockitoAnnotations.openMocks(MockitoAnnotations.java:81)
+	... 18 more
+
+</error>
+    </testcase>
+    <testcase name="test_create_already_exist_user_throws_IllegalArgumentException" classname="com.openclassrooms.etudiant.service.UserServiceTest" time="0.0" displayname="test_create_already_exist_user_throws_IllegalArgumentException()" uniqueid="[engine:junit-jupiter]/[class:com.openclassrooms.etudiant.service.UserServiceTest]/[method:test_create_already_exist_user_throws_IllegalArgumentException()]">
+      <error>org.mockito.exceptions.misusing.InjectMocksException: 
+Cannot instantiate @InjectMocks field named 'userService' of type 'class com.openclassrooms.etudiant.service.UserService'.
+You haven't provided the instance at field declaration so I tried to construct the instance.
+However the constructor or the initialization block threw an exception : Unresolved compilation problems: 
+	The blank final field userRepository may not have been initialized
+	The blank final field passwordEncoder may not have been initialized
+	The blank final field jwtService may not have been initialized
+	log cannot be resolved
+	The method getLogin() is undefined for the type User
+	The method getLogin() is undefined for the type User
+	The method setPassword(String) is undefined for the type User
+	log cannot be resolved
+	The method getLogin() is undefined for the type User
+	log cannot be resolved
+	log cannot be resolved
+	log cannot be resolved
+	log cannot be resolved
+	log cannot be resolved
+	The method getId() is undefined for the type User
+	The method getId() is undefined for the type User
+	The method getFirstName() is undefined for the type User
+	The method getLastName() is undefined for the type User
+	The method getLogin() is undefined for the type User
+	The method getLogin() is undefined for the type User
+	The method getLogin() is undefined for the type User
+	The method getLogin() is undefined for the type User
+	The method getLogin() is undefined for the type User
+	The method setUpdated_at(LocalDateTime) is undefined for the type User
+	The method setPassword(String) is undefined for the type User
+	log cannot be resolved
+	log cannot be resolved
+
+
+	at org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener.initMocks(MockitoTestExecutionListener.java:94)
+	at org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener.prepareTestInstance(MockitoTestExecutionListener.java:68)
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:260)
+	at org.springframework.test.context.junit.jupiter.SpringExtension.postProcessTestInstance(SpringExtension.java:159)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:186)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:214)
+	at java.base/java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:214)
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1716)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:570)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:560)
+	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:153)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:176)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:265)
+	at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:632)
+	at java.base/java.util.Optional.orElseGet(Optional.java:364)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+Caused by: java.lang.Error: Unresolved compilation problems: 
+	The blank final field userRepository may not have been initialized
+	The blank final field passwordEncoder may not have been initialized
+	The blank final field jwtService may not have been initialized
+	log cannot be resolved
+	The method getLogin() is undefined for the type User
+	The method getLogin() is undefined for the type User
+	The method setPassword(String) is undefined for the type User
+	log cannot be resolved
+	The method getLogin() is undefined for the type User
+	log cannot be resolved
+	log cannot be resolved
+	log cannot be resolved
+	log cannot be resolved
+	log cannot be resolved
+	The method getId() is undefined for the type User
+	The method getId() is undefined for the type User
+	The method getFirstName() is undefined for the type User
+	The method getLastName() is undefined for the type User
+	The method getLogin() is undefined for the type User
+	The method getLogin() is undefined for the type User
+	The method getLogin() is undefined for the type User
+	The method getLogin() is undefined for the type User
+	The method getLogin() is undefined for the type User
+	The method setUpdated_at(LocalDateTime) is undefined for the type User
+	The method setPassword(String) is undefined for the type User
+	log cannot be resolved
+	log cannot be resolved
+
+	at com.openclassrooms.etudiant.service.UserService.&lt;init&gt;(UserService.java:25)
+	at java.base/java.lang.invoke.MethodHandle.invokeWithArguments(MethodHandle.java:735)
+	at org.mockito.internal.util.reflection.InstrumentationMemberAccessor$Dispatcher$ByteBuddy$Yr7o1hS3.invokeWithArguments(Unknown Source)
+	at org.mockito.internal.util.reflection.InstrumentationMemberAccessor.lambda$newInstance$0(InstrumentationMemberAccessor.java:213)
+	at org.mockito.internal.util.reflection.InstrumentationMemberAccessor.newInstance(InstrumentationMemberAccessor.java:202)
+	at org.mockito.internal.util.reflection.InstrumentationMemberAccessor.newInstance(InstrumentationMemberAccessor.java:175)
+	at org.mockito.internal.util.reflection.ModuleMemberAccessor.newInstance(ModuleMemberAccessor.java:42)
+	at org.mockito.internal.util.reflection.FieldInitializer$NoArgConstructorInstantiator.instantiate(FieldInitializer.java:203)
+	at org.mockito.internal.util.reflection.FieldInitializer.acquireFieldInstance(FieldInitializer.java:146)
+	at org.mockito.internal.util.reflection.FieldInitializer.initialize(FieldInitializer.java:91)
+	at org.mockito.internal.configuration.injection.PropertyAndSetterInjection.initializeInjectMocksField(PropertyAndSetterInjection.java:93)
+	at org.mockito.internal.configuration.injection.PropertyAndSetterInjection.processInjection(PropertyAndSetterInjection.java:73)
+	at org.mockito.internal.configuration.injection.MockInjectionStrategy.process(MockInjectionStrategy.java:68)
+	at org.mockito.internal.configuration.injection.MockInjectionStrategy.relayProcessToNextStrategy(MockInjectionStrategy.java:91)
+	at org.mockito.internal.configuration.injection.MockInjectionStrategy.process(MockInjectionStrategy.java:71)
+	at org.mockito.internal.configuration.injection.MockInjectionStrategy.relayProcessToNextStrategy(MockInjectionStrategy.java:91)
+	at org.mockito.internal.configuration.injection.MockInjectionStrategy.process(MockInjectionStrategy.java:71)
+	at org.mockito.internal.configuration.injection.MockInjection$OngoingMockInjection.apply(MockInjection.java:88)
+	at org.mockito.internal.configuration.DefaultInjectionEngine.injectMocksOnFields(DefaultInjectionEngine.java:26)
+	at org.mockito.internal.configuration.InjectingAnnotationEngine.injectCloseableMocks(InjectingAnnotationEngine.java:107)
+	at org.mockito.internal.configuration.InjectingAnnotationEngine.process(InjectingAnnotationEngine.java:48)
+	at org.mockito.MockitoAnnotations.openMocks(MockitoAnnotations.java:81)
+	... 18 more
+
+</error>
+    </testcase>
+    <testcase name="test_create_user" classname="com.openclassrooms.etudiant.service.UserServiceTest" time="0.001" displayname="test_create_user()" uniqueid="[engine:junit-jupiter]/[class:com.openclassrooms.etudiant.service.UserServiceTest]/[method:test_create_user()]">
+      <error>org.mockito.exceptions.misusing.InjectMocksException: 
+Cannot instantiate @InjectMocks field named 'userService' of type 'class com.openclassrooms.etudiant.service.UserService'.
+You haven't provided the instance at field declaration so I tried to construct the instance.
+However the constructor or the initialization block threw an exception : Unresolved compilation problems: 
+	The blank final field userRepository may not have been initialized
+	The blank final field passwordEncoder may not have been initialized
+	The blank final field jwtService may not have been initialized
+	log cannot be resolved
+	The method getLogin() is undefined for the type User
+	The method getLogin() is undefined for the type User
+	The method setPassword(String) is undefined for the type User
+	log cannot be resolved
+	The method getLogin() is undefined for the type User
+	log cannot be resolved
+	log cannot be resolved
+	log cannot be resolved
+	log cannot be resolved
+	log cannot be resolved
+	The method getId() is undefined for the type User
+	The method getId() is undefined for the type User
+	The method getFirstName() is undefined for the type User
+	The method getLastName() is undefined for the type User
+	The method getLogin() is undefined for the type User
+	The method getLogin() is undefined for the type User
+	The method getLogin() is undefined for the type User
+	The method getLogin() is undefined for the type User
+	The method getLogin() is undefined for the type User
+	The method setUpdated_at(LocalDateTime) is undefined for the type User
+	The method setPassword(String) is undefined for the type User
+	log cannot be resolved
+	log cannot be resolved
+
+
+	at org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener.initMocks(MockitoTestExecutionListener.java:94)
+	at org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener.prepareTestInstance(MockitoTestExecutionListener.java:68)
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:260)
+	at org.springframework.test.context.junit.jupiter.SpringExtension.postProcessTestInstance(SpringExtension.java:159)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:186)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:214)
+	at java.base/java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:214)
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1716)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:570)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:560)
+	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:153)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:176)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:265)
+	at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:632)
+	at java.base/java.util.Optional.orElseGet(Optional.java:364)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+Caused by: java.lang.Error: Unresolved compilation problems: 
+	The blank final field userRepository may not have been initialized
+	The blank final field passwordEncoder may not have been initialized
+	The blank final field jwtService may not have been initialized
+	log cannot be resolved
+	The method getLogin() is undefined for the type User
+	The method getLogin() is undefined for the type User
+	The method setPassword(String) is undefined for the type User
+	log cannot be resolved
+	The method getLogin() is undefined for the type User
+	log cannot be resolved
+	log cannot be resolved
+	log cannot be resolved
+	log cannot be resolved
+	log cannot be resolved
+	The method getId() is undefined for the type User
+	The method getId() is undefined for the type User
+	The method getFirstName() is undefined for the type User
+	The method getLastName() is undefined for the type User
+	The method getLogin() is undefined for the type User
+	The method getLogin() is undefined for the type User
+	The method getLogin() is undefined for the type User
+	The method getLogin() is undefined for the type User
+	The method getLogin() is undefined for the type User
+	The method setUpdated_at(LocalDateTime) is undefined for the type User
+	The method setPassword(String) is undefined for the type User
+	log cannot be resolved
+	log cannot be resolved
+
+	at com.openclassrooms.etudiant.service.UserService.&lt;init&gt;(UserService.java:25)
+	at java.base/java.lang.invoke.MethodHandle.invokeWithArguments(MethodHandle.java:735)
+	at org.mockito.internal.util.reflection.InstrumentationMemberAccessor$Dispatcher$ByteBuddy$Yr7o1hS3.invokeWithArguments(Unknown Source)
+	at org.mockito.internal.util.reflection.InstrumentationMemberAccessor.lambda$newInstance$0(InstrumentationMemberAccessor.java:213)
+	at org.mockito.internal.util.reflection.InstrumentationMemberAccessor.newInstance(InstrumentationMemberAccessor.java:202)
+	at org.mockito.internal.util.reflection.InstrumentationMemberAccessor.newInstance(InstrumentationMemberAccessor.java:175)
+	at org.mockito.internal.util.reflection.ModuleMemberAccessor.newInstance(ModuleMemberAccessor.java:42)
+	at org.mockito.internal.util.reflection.FieldInitializer$NoArgConstructorInstantiator.instantiate(FieldInitializer.java:203)
+	at org.mockito.internal.util.reflection.FieldInitializer.acquireFieldInstance(FieldInitializer.java:146)
+	at org.mockito.internal.util.reflection.FieldInitializer.initialize(FieldInitializer.java:91)
+	at org.mockito.internal.configuration.injection.PropertyAndSetterInjection.initializeInjectMocksField(PropertyAndSetterInjection.java:93)
+	at org.mockito.internal.configuration.injection.PropertyAndSetterInjection.processInjection(PropertyAndSetterInjection.java:73)
+	at org.mockito.internal.configuration.injection.MockInjectionStrategy.process(MockInjectionStrategy.java:68)
+	at org.mockito.internal.configuration.injection.MockInjectionStrategy.relayProcessToNextStrategy(MockInjectionStrategy.java:91)
+	at org.mockito.internal.configuration.injection.MockInjectionStrategy.process(MockInjectionStrategy.java:71)
+	at org.mockito.internal.configuration.injection.MockInjectionStrategy.relayProcessToNextStrategy(MockInjectionStrategy.java:91)
+	at org.mockito.internal.configuration.injection.MockInjectionStrategy.process(MockInjectionStrategy.java:71)
+	at org.mockito.internal.configuration.injection.MockInjection$OngoingMockInjection.apply(MockInjection.java:88)
+	at org.mockito.internal.configuration.DefaultInjectionEngine.injectMocksOnFields(DefaultInjectionEngine.java:26)
+	at org.mockito.internal.configuration.InjectingAnnotationEngine.injectCloseableMocks(InjectingAnnotationEngine.java:107)
+	at org.mockito.internal.configuration.InjectingAnnotationEngine.process(InjectingAnnotationEngine.java:48)
+	at org.mockito.MockitoAnnotations.openMocks(MockitoAnnotations.java:81)
+	... 18 more
+
+</error>
+    </testcase>
+  </testsuite>
+</testrun>

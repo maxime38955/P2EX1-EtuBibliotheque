@@ -29,7 +29,7 @@ export class UserService {
   }
 
   delete(login: string): Observable<void> {
-    return this.httpClient.delete<void>('/api/delete/' + login);
+    return this.httpClient.delete<void>(`/api/delete/${login}` );
   }
 
   // N'oublie pas de créer et d'utiliser UserUpdateDTO ici !

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="UserControllerTest" project="Back-end---Testez-et-am-liorez-une-application-existante-main" tests="3" started="3" failures="0" errors="0" ignored="0">
+  <testsuite name="com.openclassrooms.etudiant.controller.UserControllerTest" time="0.604" displayname="UserControllerTest" uniqueid="[engine:junit-jupiter]/[class:com.openclassrooms.etudiant.controller.UserControllerTest]">
+    <testcase name="registerUserWithoutRequiredData" classname="com.openclassrooms.etudiant.controller.UserControllerTest" time="0.408" displayname="registerUserWithoutRequiredData()" uniqueid="[engine:junit-jupiter]/[class:com.openclassrooms.etudiant.controller.UserControllerTest]/[method:registerUserWithoutRequiredData()]"/>
+    <testcase name="registerAlreadyExistUser" classname="com.openclassrooms.etudiant.controller.UserControllerTest" time="0.118" displayname="registerAlreadyExistUser()" uniqueid="[engine:junit-jupiter]/[class:com.openclassrooms.etudiant.controller.UserControllerTest]/[method:registerAlreadyExistUser()]"/>
+    <testcase name="registerUserSuccessful" classname="com.openclassrooms.etudiant.controller.UserControllerTest" time="0.077" displayname="registerUserSuccessful()" uniqueid="[engine:junit-jupiter]/[class:com.openclassrooms.etudiant.controller.UserControllerTest]/[method:registerUserSuccessful()]"/>
+  </testsuite>
+</testrun>

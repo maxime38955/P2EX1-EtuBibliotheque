@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="UserServiceTest.test_create_null_user_throws_IllegalArgumentException" project="Back-end---Testez-et-am-liorez-une-application-existante-main" tests="1" started="1" failures="0" errors="0" ignored="0">
+  <testsuite name="com.openclassrooms.etudiant.service.UserServiceTest" time="0.001" displayname="UserServiceTest" uniqueid="[engine:junit-jupiter]/[class:com.openclassrooms.etudiant.service.UserServiceTest]">
+    <testcase name="test_create_null_user_throws_IllegalArgumentException" classname="com.openclassrooms.etudiant.service.UserServiceTest" time="0.001" displayname="test_create_null_user_throws_IllegalArgumentException()" uniqueid="[engine:junit-jupiter]/[class:com.openclassrooms.etudiant.service.UserServiceTest]/[method:test_create_null_user_throws_IllegalArgumentException()]"/>
+  </testsuite>
+</testrun>

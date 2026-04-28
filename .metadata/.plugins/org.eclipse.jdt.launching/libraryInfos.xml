@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <libraryInfos>
+    <libraryInfo home="/Library/Java/JavaVirtualMachines/jdk-21.jdk/Contents/Home" version="21.0.10"/>
+    <libraryInfo home="/Library/Java/JavaVirtualMachines/temurin-11.jdk/Contents/Home" version="11.0.30"/>
     <libraryInfo home="/Applications/SpringToolsForEclipse.app/Contents/Eclipse/plugins/org.eclipse.justj.openjdk.hotspot.jre.full.macosx.x86_64_25.0.2.v20260203-1141" version="25.0.2">
         <bootpath>
             <entry path="null"/>
@@ -13,4 +15,5 @@
     </libraryInfo>
     <libraryInfo home="/Library/Java/JavaVirtualMachines/jdk-25.jdk/Contents/Home" version="25.0.1"/>
     <libraryInfo home="/Applications/SpringToolsForEclipse.app/Contents/Eclipse/plugins/org.eclipse.justj.openjdk.hotspot.jre.full.macosx.x86_64_25.0.2.v20260203-1141/jre" version="25.0.2"/>
+    <libraryInfo home="/Library/Java/JavaVirtualMachines/temurin-25.jdk/Contents/Home" version="25.0.3"/>
 </libraryInfos>

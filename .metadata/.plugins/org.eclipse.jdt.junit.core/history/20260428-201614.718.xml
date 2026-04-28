@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="java (1)" project="Back-end---Testez-et-am-liorez-une-application-existante-main" tests="6" started="3" failures="0" errors="1" ignored="0">
+  <testsuite name="com.openclassrooms.etudiant.controller.UserControllerTest" incomplete="true" displayname="UserControllerTest" uniqueid="[engine:junit-jupiter]/[class:com.openclassrooms.etudiant.controller.UserControllerTest]">
+    <error>java.lang.IllegalStateException: Could not find a valid Docker environment. Please see logs and check configuration
+	at org.testcontainers.dockerclient.DockerClientProviderStrategy.lambda$getFirstValidStrategy$7(DockerClientProviderStrategy.java:277)
+	at java.base/java.util.Optional.orElseThrow(Optional.java:403)
+	at org.testcontainers.dockerclient.DockerClientProviderStrategy.getFirstValidStrategy(DockerClientProviderStrategy.java:268)
+	at org.testcontainers.DockerClientFactory.getOrInitializeStrategy(DockerClientFactory.java:152)
+	at org.testcontainers.DockerClientFactory.client(DockerClientFactory.java:194)
+	at org.testcontainers.DockerClientFactory$1.getDockerClient(DockerClientFactory.java:106)
+	at com.github.dockerjava.api.DockerClientDelegate.authConfig(DockerClientDelegate.java:109)
+	at org.testcontainers.containers.GenericContainer.start(GenericContainer.java:329)
+	at org.testcontainers.junit.jupiter.TestcontainersExtension$StoreAdapter.start(TestcontainersExtension.java:276)
+	at org.testcontainers.junit.jupiter.TestcontainersExtension$StoreAdapter.access$200(TestcontainersExtension.java:263)
+	at org.testcontainers.junit.jupiter.TestcontainersExtension.lambda$null$4(TestcontainersExtension.java:83)
+	at org.testcontainers.junit.jupiter.TestcontainersExtension.lambda$startContainers$5(TestcontainersExtension.java:83)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+	at org.testcontainers.junit.jupiter.TestcontainersExtension.startContainers(TestcontainersExtension.java:83)
+	at org.testcontainers.junit.jupiter.TestcontainersExtension.beforeAll(TestcontainersExtension.java:57)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+
+</error>
+    <testcase name="registerUserWithoutRequiredData" classname="com.openclassrooms.etudiant.controller.UserControllerTest" incomplete="true" displayname="registerUserWithoutRequiredData()" uniqueid="[engine:junit-jupiter]/[class:com.openclassrooms.etudiant.controller.UserControllerTest]/[method:registerUserWithoutRequiredData()]"/>
+    <testcase name="registerAlreadyExistUser" classname="com.openclassrooms.etudiant.controller.UserControllerTest" incomplete="true" displayname="registerAlreadyExistUser()" uniqueid="[engine:junit-jupiter]/[class:com.openclassrooms.etudiant.controller.UserControllerTest]/[method:registerAlreadyExistUser()]"/>
+    <testcase name="registerUserSuccessful" classname="com.openclassrooms.etudiant.controller.UserControllerTest" incomplete="true" displayname="registerUserSuccessful()" uniqueid="[engine:junit-jupiter]/[class:com.openclassrooms.etudiant.controller.UserControllerTest]/[method:registerUserSuccessful()]"/>
+  </testsuite>
+  <testsuite name="com.openclassrooms.etudiant.service.UserServiceTest" time="0.038" displayname="UserServiceTest" uniqueid="[engine:junit-jupiter]/[class:com.openclassrooms.etudiant.service.UserServiceTest]">
+    <testcase name="test_create_null_user_throws_IllegalArgumentException" classname="com.openclassrooms.etudiant.service.UserServiceTest" time="0.007" displayname="test_create_null_user_throws_IllegalArgumentException()" uniqueid="[engine:junit-jupiter]/[class:com.openclassrooms.etudiant.service.UserServiceTest]/[method:test_create_null_user_throws_IllegalArgumentException()]"/>
+    <testcase name="test_create_already_exist_user_throws_IllegalArgumentException" classname="com.openclassrooms.etudiant.service.UserServiceTest" time="0.009" displayname="test_create_already_exist_user_throws_IllegalArgumentException()" uniqueid="[engine:junit-jupiter]/[class:com.openclassrooms.etudiant.service.UserServiceTest]/[method:test_create_already_exist_user_throws_IllegalArgumentException()]"/>
+    <testcase name="test_create_user" classname="com.openclassrooms.etudiant.service.UserServiceTest" time="0.02" displayname="test_create_user()" uniqueid="[engine:junit-jupiter]/[class:com.openclassrooms.etudiant.service.UserServiceTest]/[method:test_create_user()]"/>
+  </testsuite>
+</testrun>

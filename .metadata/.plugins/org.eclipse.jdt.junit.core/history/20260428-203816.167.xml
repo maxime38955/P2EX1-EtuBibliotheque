@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="UserControllerTest" project="Back-end---Testez-et-am-liorez-une-application-existante-main" tests="3" started="0" failures="0" errors="1" ignored="0">
+  <testsuite name="com.openclassrooms.etudiant.controller.UserControllerTest" incomplete="true" displayname="UserControllerTest" uniqueid="[engine:junit-jupiter]/[class:com.openclassrooms.etudiant.controller.UserControllerTest]">
+    <error>org.testcontainers.containers.ContainerLaunchException: Container startup failed for image mysql:latest
+	at org.testcontainers.containers.GenericContainer.doStart(GenericContainer.java:359)
+	at org.testcontainers.containers.GenericContainer.start(GenericContainer.java:330)
+	at org.testcontainers.junit.jupiter.TestcontainersExtension$StoreAdapter.start(TestcontainersExtension.java:276)
+	at org.testcontainers.junit.jupiter.TestcontainersExtension$StoreAdapter.access$200(TestcontainersExtension.java:263)
+	at org.testcontainers.junit.jupiter.TestcontainersExtension.lambda$null$4(TestcontainersExtension.java:83)
+	at org.testcontainers.junit.jupiter.TestcontainersExtension.lambda$startContainers$5(TestcontainersExtension.java:83)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+	at org.testcontainers.junit.jupiter.TestcontainersExtension.startContainers(TestcontainersExtension.java:83)
+	at org.testcontainers.junit.jupiter.TestcontainersExtension.beforeAll(TestcontainersExtension.java:57)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+Caused by: org.rnorth.ducttape.RetryCountExceededException: Retry limit hit with exception
+	at org.rnorth.ducttape.unreliables.Unreliables.retryUntilSuccess(Unreliables.java:88)
+	at org.testcontainers.containers.GenericContainer.doStart(GenericContainer.java:344)
+	... 9 more
+Caused by: org.testcontainers.containers.ContainerLaunchException: Could not create/start container
+	at org.testcontainers.containers.GenericContainer.tryStart(GenericContainer.java:563)
+	at org.testcontainers.containers.GenericContainer.lambda$doStart$0(GenericContainer.java:354)
+	at org.rnorth.ducttape.unreliables.Unreliables.retryUntilSuccess(Unreliables.java:81)
+	... 10 more
+Caused by: java.lang.IllegalStateException: Wait strategy failed. Container exited with code 1
+	at org.testcontainers.containers.GenericContainer.tryStart(GenericContainer.java:533)
+	... 12 more
+Caused by: java.lang.IllegalStateException: Container is started, but cannot be accessed by (JDBC URL: jdbc:mysql://localhost:64682/test), please check container logs
+	at org.testcontainers.containers.JdbcDatabaseContainer.waitUntilContainerStarted(JdbcDatabaseContainer.java:209)
+	at org.testcontainers.containers.GenericContainer.tryStart(GenericContainer.java:500)
+	... 12 more
+Caused by: java.sql.SQLException: Could not create new connection
+	at org.testcontainers.containers.JdbcDatabaseContainer.createConnection(JdbcDatabaseContainer.java:295)
+	at org.testcontainers.containers.JdbcDatabaseContainer.createConnection(JdbcDatabaseContainer.java:251)
+	at org.testcontainers.containers.JdbcDatabaseContainer.waitUntilContainerStarted(JdbcDatabaseContainer.java:191)
+	... 13 more
+Caused by: com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at com.mysql.cj.jdbc.exceptions.SQLError.createCommunicationsException(SQLError.java:165)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:55)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:839)
+	at com.mysql.cj.jdbc.ConnectionImpl.&lt;init&gt;(ConnectionImpl.java:415)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:237)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:180)
+	at org.testcontainers.containers.JdbcDatabaseContainer.createConnection(JdbcDatabaseContainer.java:286)
+	... 15 more
+Caused by: com.mysql.cj.exceptions.CJCommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:483)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:52)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:95)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:140)
+	at com.mysql.cj.exceptions.ExceptionFactory.createCommunicationsException(ExceptionFactory.java:156)
+	at com.mysql.cj.protocol.a.NativeProtocol.readMessage(NativeProtocol.java:592)
+	at com.mysql.cj.protocol.a.NativeProtocol.readServerCapabilities(NativeProtocol.java:516)
+	at com.mysql.cj.protocol.a.NativeProtocol.beforeHandshake(NativeProtocol.java:411)
+	at com.mysql.cj.protocol.a.NativeProtocol.connect(NativeProtocol.java:1331)
+	at com.mysql.cj.NativeSession.connect(NativeSession.java:155)
+	at com.mysql.cj.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:963)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:827)
+	... 19 more
+Caused by: java.io.EOFException: Can not read response from server. Expected to read 4 bytes, read 0 bytes before connection was unexpectedly lost.
+	at com.mysql.cj.protocol.FullReadInputStream.readFully(FullReadInputStream.java:58)
+	at com.mysql.cj.protocol.a.SimplePacketReader.readHeaderLocal(SimplePacketReader.java:72)
+	at com.mysql.cj.protocol.a.SimplePacketReader.readHeader(SimplePacketReader.java:54)
+	at com.mysql.cj.protocol.a.SimplePacketReader.readHeader(SimplePacketReader.java:36)
+	at com.mysql.cj.protocol.a.NativeProtocol.readMessage(NativeProtocol.java:586)
+	... 25 more
+
+</error>
+    <testcase name="registerUserWithoutRequiredData" classname="com.openclassrooms.etudiant.controller.UserControllerTest" incomplete="true" displayname="registerUserWithoutRequiredData()" uniqueid="[engine:junit-jupiter]/[class:com.openclassrooms.etudiant.controller.UserControllerTest]/[method:registerUserWithoutRequiredData()]"/>
+    <testcase name="registerAlreadyExistUser" classname="com.openclassrooms.etudiant.controller.UserControllerTest" incomplete="true" displayname="registerAlreadyExistUser()" uniqueid="[engine:junit-jupiter]/[class:com.openclassrooms.etudiant.controller.UserControllerTest]/[method:registerAlreadyExistUser()]"/>
+    <testcase name="registerUserSuccessful" classname="com.openclassrooms.etudiant.controller.UserControllerTest" incomplete="true" displayname="registerUserSuccessful()" uniqueid="[engine:junit-jupiter]/[class:com.openclassrooms.etudiant.controller.UserControllerTest]/[method:registerUserSuccessful()]"/>
+  </testsuite>
+</testrun>
