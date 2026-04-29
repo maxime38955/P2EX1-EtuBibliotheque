@@ -2,6 +2,7 @@
 <section name="Workbench">
 	<list key="installedFeatures">
 		<item value="org.eclipse.buildship:3.1.11.v20250904-1000"/>
+		<item value="org.eclipse.eclemma.feature:3.1.11.202511262126"/>
 		<item value="org.eclipse.egit.gitflow.feature:7.6.0.202603022253-r"/>
 		<item value="org.eclipse.egit:7.6.0.202603022253-r"/>
 		<item value="org.eclipse.epp.mpc:1.13.0.v20250816-1241"/>

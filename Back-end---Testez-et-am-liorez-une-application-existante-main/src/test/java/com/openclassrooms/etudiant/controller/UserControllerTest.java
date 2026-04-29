@@ -81,6 +81,9 @@ public class UserControllerTest {
 
     // --- TESTS LOGIN ---
 
+    
+    
+    
     @Test
     public void loginSuccessful() throws Exception {
         // GIVEN: Un utilisateur existe
@@ -128,6 +131,40 @@ public class UserControllerTest {
                         .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(MockMvcResultMatchers.status().isOk());
     }
+    
+    
+    @Test
+    public void updateUserNameError() throws Exception {
+    	// GIVEN: On crée deux utilisateurs
+        User u1 = new User();
+        u1.setFirstName("User1");
+        u1.setLastName("User1");
+        u1.setLogin("login1");
+        u1.setPassword("pass1");
+        userService.register(u1);
+
+        User u2 = new User();
+        u2.setFirstName("User2");
+        u2.setLastName("User2");
+        u2.setLogin("login2");
+        u2.setPassword("pass2");
+        userService.register(u2);
+
+
+        UpdateDTO updateDTO = new UpdateDTO();
+        updateDTO.setId(u1.getId());
+        updateDTO.setPassword(u1.getPassword());
+        updateDTO.setLastName(u1.getLastName());
+        updateDTO.setLogin(u2.getLogin());
+        updateDTO.setFirstName("Jane"); // On change le prénom
+
+        // WHEN
+        mockMvc.perform(MockMvcRequestBuilders.patch("/api/update")
+                        .content(objectMapper.writeValueAsString(updateDTO))
+                        .contentType(MediaType.APPLICATION_JSON))
+                .andExpect(MockMvcResultMatchers.status().isForbidden());
+    }
+
 
     // --- TESTS DELETE ---
 

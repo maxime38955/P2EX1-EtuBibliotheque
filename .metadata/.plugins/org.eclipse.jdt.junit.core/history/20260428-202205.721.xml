@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?><testrun name="UserServiceTest" project="Back-end---Testez-et-am-liorez-une-application-existante-main" tests="3" started="3" failures="0" errors="0" ignored="0">
-  <testsuite name="com.openclassrooms.etudiant.service.UserServiceTest" time="0.052" displayname="UserServiceTest" uniqueid="[engine:junit-jupiter]/[class:com.openclassrooms.etudiant.service.UserServiceTest]">
-    <testcase name="test_create_null_user_throws_IllegalArgumentException" classname="com.openclassrooms.etudiant.service.UserServiceTest" time="0.007" displayname="test_create_null_user_throws_IllegalArgumentException()" uniqueid="[engine:junit-jupiter]/[class:com.openclassrooms.etudiant.service.UserServiceTest]/[method:test_create_null_user_throws_IllegalArgumentException()]"/>
-    <testcase name="test_create_already_exist_user_throws_IllegalArgumentException" classname="com.openclassrooms.etudiant.service.UserServiceTest" time="0.011" displayname="test_create_already_exist_user_throws_IllegalArgumentException()" uniqueid="[engine:junit-jupiter]/[class:com.openclassrooms.etudiant.service.UserServiceTest]/[method:test_create_already_exist_user_throws_IllegalArgumentException()]"/>
-    <testcase name="test_create_user" classname="com.openclassrooms.etudiant.service.UserServiceTest" time="0.03" displayname="test_create_user()" uniqueid="[engine:junit-jupiter]/[class:com.openclassrooms.etudiant.service.UserServiceTest]/[method:test_create_user()]"/>
-  </testsuite>
-</testrun>
