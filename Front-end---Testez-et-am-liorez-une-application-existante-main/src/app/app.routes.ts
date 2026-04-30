@@ -8,7 +8,7 @@ import { EtudiantComponent } from './pages/etudiant/etudiant.component';
 export const routes: Routes = [
   {
     path: '',
-    component: AppComponent,
+    component: RegisterComponent,
   },
   {
     path: 'register',

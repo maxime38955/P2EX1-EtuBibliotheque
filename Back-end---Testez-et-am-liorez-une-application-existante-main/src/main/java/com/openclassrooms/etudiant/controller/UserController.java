@@ -77,8 +77,10 @@ public class UserController {
     
     @GetMapping("/api/readlist")
     public ResponseEntity<?> readList() {
+    	 
     	List<User> userList = userService.readList();
         return ResponseEntity.ok(userList);
+    	  
     }
 
 

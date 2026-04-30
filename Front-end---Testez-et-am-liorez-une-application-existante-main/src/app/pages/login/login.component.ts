@@ -54,6 +54,7 @@ export class LoginComponent {
     };
       this.userService.login(this.registerForm.value).subscribe({
       next: (token: string) => {
+        localStorage.removeItem('token');
         localStorage.setItem('token', token); // Stockage du JWT
         console.log("Connecté avec succès");
         this.router.navigateByUrl(`list`);
