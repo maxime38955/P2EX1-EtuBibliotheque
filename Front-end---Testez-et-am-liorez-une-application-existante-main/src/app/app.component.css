@@ -1,0 +1,90 @@
+* {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f8f9fa;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: #333;
+        }
+
+        .home-container {
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+            text-align: center;
+            max-width: 450px;
+            width: 90%;
+        }
+
+        .logo {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: #1a73e8;
+            margin-bottom: 15px;
+        }
+
+        h1 {
+            font-size: 1.6rem;
+            margin-bottom: 10px;
+            color: #202124;
+        }
+
+        p {
+            color: #5f6368;
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+            line-height: 1.4;
+        }
+
+        .actions {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .btn {
+            text-decoration: none;
+            padding: 14px;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: background-color 0.2s ease, transform 0.1s ease;
+            display: block;
+        }
+
+        .btn:active {
+            transform: scale(0.98);
+        }
+
+        .btn-login {
+            background-color: #13ff3a;
+            color: #ffffff;
+        }
+
+        .btn-login:hover {
+            background-color: #09ca4a;
+        }
+
+        .btn-register {
+            background-color: #3056fd;
+            color: #ffffff;
+            border: 1px solid #dadce0;
+        }
+
+        .btn-register:hover {
+            background-color: #e8eaed;
+        }
+
+        .footer-text {
+            margin-top: 35px;
+            font-size: 0.8rem;
+            color: #70757a;
+        }

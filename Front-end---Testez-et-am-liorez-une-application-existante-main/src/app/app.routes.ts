@@ -4,11 +4,12 @@ import {AppComponent} from './app.component';
 import { LoginComponent } from './pages/login/login.component';
 import { ListComponent } from './pages/list/list.component';
 import { EtudiantComponent } from './pages/etudiant/etudiant.component';
+import { HomeComponent } from './pages/home/home.component';
 
 export const routes: Routes = [
   {
     path: '',
-    component: RegisterComponent,
+    component: HomeComponent,
   },
   {
     path: 'register',

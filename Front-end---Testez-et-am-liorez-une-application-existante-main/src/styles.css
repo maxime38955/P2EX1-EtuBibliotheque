@@ -1,5 +1,329 @@
-/* You can add global styles to this file, and also import other style files */
+/* =========================================================
+   Styles globaux - ÉtuBibliothèque
+   ========================================================= */
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html, body { 
+   
+}
 
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, Roboto, "Helvetica Neue", sans-serif;
+    background-color: #073b4c !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    color: #333;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    
+}
+
+/* =========================================================
+   Conteneur de la carte principale
+   ========================================================= */
+
+.home-container {
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    
+    max-width: 800px;
+    min-width: 800px;
+    width: 90%;
+    margin: 20px;
+}
+ .card-container {
+    background-color: #ffffff;
+   
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+ 
+    max-width: 800px;
+    min-width: 800px;
+    width: 90%;
+    margin: 20px;
+}
+
+
+.nav-container {
+    background-color: #ffffff;
+    padding: 4px;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    
+    max-width: 800px;
+    min-width: 800px;
+    width: 90%;
+    margin: 20px;
+}
+
+/* =========================================================
+   Typographie & Logo
+   ========================================================= */
+
+.logo {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #118AB2;
+    margin-bottom: 15px;
+}
+
+.logo-list {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #118AB2;
+    margin-right: 20px;
+    margin-left: 14px;
+     
+}
+
+
+h1 {
+    font-size: 1.6rem;
+    margin-bottom: 10px;
+    color: #202124;
+}
+
+h2 {
+    font-size: 1.4rem;
+    color: #1e293b;
+    margin-bottom: 20px;
+}
+
+p {
+    color: #5f6368;
+    margin-bottom: 30px;
+    font-size: 0.95rem;
+    line-height: 1.4;
+}
+
+/* =========================================================
+   Boutons et actions
+   ========================================================= */
+
+.actions {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.action-cell {
+    display: flex;
+    flex-direction: column;
+  
+   
+}
+
+.btn {
+    text-decoration: none;
+    padding: 14px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+    display: block;
+    cursor: pointer;
+    border: none;
+    margin: 12px;
+}
+
+.btn:active {
+    transform: scale(0.98);
+}
+
+.btn-login {
+    background-color: #06D6A0;
+    color: #ffffff;
+}
+
+.btn-login:hover {
+    background-color: #04b588;
+}
+
+.btn-register {
+    background-color: #118AB2;
+    color: #ffffff;
+    border: 1px solid #dadce0;
+}
+
+.btn-register:hover {
+    background-color: #0d6c8a;
+}
+
+.btn-detail {
+    background-color: #FFD166;
+    color: #ffffff;
+    padding: 10px 16px;
+    border-radius: 8px;
+}
+
+.btn-detail:hover {
+    background-color: #ffd166c7;
+}
+
+ .btn-home {
+    background-color: #073B4C;
+    color: #ffffff;
+    padding: 10px 16px;
+    border-radius: 8px;
+}
+
+.btn-home:hover {
+    background-color: #073b4cde;
+}
+
+ .btn-modifie {
+    background-color: #118AB2;
+    color: #ffffff;
+    padding: 10px 16px;
+    border-radius: 8px;
+}
+
+.btn-modifie:hover {
+    background-color: #118ab2d7;
+}
+
+ .btn-suprime {
+    background-color: #EF476F;
+    color: #ffffff;
+    padding: 10px 16px;
+    border-radius: 8px;
+}
+
+.btn-suprime:hover {
+    background-color: #ef476ed7;
+}
+
+ .btn-valide {
+    background-color: #06D6A0;
+    color: #ffffff;
+    padding: 10px 16px;
+    border-radius: 8px;
+}
+
+
+.btn-valide:hover {
+    background-color: #06d69ebe;
+}
+
+ .btn-annule {
+    background-color: #FFD166;
+    color: #ffffff;
+    padding: 10px 16px;
+    border-radius: 8px;
+}
+
+
+.btn-annule:hover {
+    background-color: #ffd166e1;
+}
+
+
+
+
+ 
+
+.ml-1 {
+    margin-left: 0.5rem;
+}
+
+/* =========================================================
+   Styles des tableaux (Liste des étudiants)
+   ========================================================= */
+
+.list-container {
+     
+}
+
+.table-responsive {
+    overflow-x: auto;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+}
+
+table {
+    min-width: 100%;
+    border-collapse: collapse;
+    background-color: #ffffff;
+    font-size: 0.95rem;
+    color: #334155;
+    text-align: center;
+  
+    
+}
+
+th, td {
+    padding: 14px 20px;
+    border-bottom: 1px solid #f1f5f9;
+    border: 1px solid #cbd5e1;
+    
+    
+}
+
+th {
+    background-color: #f8fafc;
+    color: #475569;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 0.05em;
+    text-align: center;
+}
+
+tbody tr:hover {
+    background-color: #f8fafc;
+}
+
+tbody tr:last-child td {
+    border-bottom: none;
+}
+
+/* =========================================================
+   En-têtes de cartes (Card Header)
+   ========================================================= */
+
+.card-header {
+    padding: 16px 20px;
+    color: #ffffff;
+    font-weight: 600;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+.card-header.Register {
+    background-color: #118AB2;
+}
+
+.card-header.Login {
+    background-color: #06D6A0;
+}
+
+.card-header.Details {
+    background-color: #FFD166;
+}
+
+
+/* =========================================================
+   Footer
+   ========================================================= */
+
+.footer-text {
+    margin-top: 35px;
+    font-size: 0.8rem;
+    color: #70757a;
+}

@@ -37,4 +37,20 @@ export class ListComponent implements OnInit {
      this.router.navigateByUrl(`etudiant/${student.login}`);
      
     }
+
+      onRegister(): void {
+     
+     this.router.navigateByUrl(`register`);
+  }
+
+   onHome(): void {
+     
+     this.router.navigateByUrl(``);
+  }
+
+   onLogin(): void {
+     
+     this.router.navigateByUrl(`login`);
+  }
+    
 }

@@ -1,7 +1,17 @@
-<div class="list-container">
-  <h2>Liste des étudiants</h2>
+ <nav class="nav-container">  
+  <div class="logo-list">📚 ÉtuBibliothèque</div>
+  <button class=" btn btn-home"   (click)="onHome()">Home </button> 
+  <button class=" btn btn-register"   (click)="onRegister()">S'enregirster </button> 
+  <button class=" btn btn-login"   (click)="onLogin()"> Se conecter</button> 
+  
+</nav>
 
+ 
+<div class="list-container">
+  
+ 
   <table>
+    
     <thead>
       <tr>
     
@@ -17,17 +27,18 @@
           <td>{{ student.firstName }}</td>
           <td>{{ student.lastName }}</td>
           <td>{{ student.login }}</td>
-          <td>
-            <button class=" btn-primary" (click)="onViewDetails(student)" >
+          <td class="action-cell">
+            <button class=" btn btn-detail" (click)="onViewDetails(student)" >
               Détail
             </button>
           </td>
         </tr>
       } @empty {
         <tr>
-          <td colspan="5">Aucun étudiant trouvé.</td>
+          <td colspan="4">Aucun étudiant trouvé.</td>
         </tr>
       }
     </tbody>
   </table>
 </div>
+ 

@@ -1,5 +1,5 @@
-<div class="card m-3">
-  <h5 class="card-header Register" style="background-color: rgb(65, 89, 224); color: white">Registration Form</h5>
+<div class="card-container">
+  <h5 class="card-header Register" >Registration Form</h5>
   <div class="card-body">
     <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
       <div class="form-row">
@@ -69,13 +69,12 @@
           </div>
         }
       </div>
-      <div class="text-center">
-        <button class="btn btn-primary mr-1">Register</button>
-        <button class="btn btn-secondary" type="reset" (click)="onReset()">
-          Cancel
-        </button>
-           <button class="btn btn-info ml-1"   (click)="onLogin()">
-          Go to Login
+      <div class="text-center actions">
+        <button class="btn btn-register mr-1">Register</button>
+        
+             <button class="btn btn-login"  (click)="onLogin()">Se connecter </button>  
+             <button class="btn btn-home"  (click)="onHome()">
+          Home
         </button>
       </div>
     </form>

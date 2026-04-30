@@ -68,9 +68,9 @@ export class LoginComponent {
      
   }
 
-  onReset(): void {
-    this.submitted = false;
-    this.registerForm.reset();
+  onHome(): void {
+     
+    this.router.navigateByUrl(``);
   }
 
    onRegister(): void {

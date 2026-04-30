@@ -76,4 +76,12 @@ export class EtudiantComponent implements OnInit {
       });
     }
   }
+
+ 
+
+   onReturn(): void {
+     
+     this.router.navigateByUrl(`list`);
+  }
+ 
 }
