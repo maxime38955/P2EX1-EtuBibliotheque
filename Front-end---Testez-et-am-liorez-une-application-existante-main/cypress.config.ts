@@ -1,22 +1,12 @@
 import { defineConfig } from "cypress";
 
 export default defineConfig({
-  projectId: 'owofvj',
-  allowCypressEnv: false,
-
   e2e: {
-    setupNodeEvents(on, config) {
-      // implement node event listeners here
+    setupNodeEvents(on: any, config: any) {
+      // Intégration de la couverture de code pour les tests E2E
+      require('@cypress/code-coverage/task')(on, config);
+
+      return config;
     },
   },
-
-  component: {
-    devServer: {
-      framework: "angular",
-      bundler: "webpack",
-    },
-    specPattern: "**/*.cy.ts",
-  },
-
-  
 });

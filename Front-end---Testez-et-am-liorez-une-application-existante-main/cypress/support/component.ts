@@ -18,6 +18,11 @@ import './commands'
 
 import { mount } from 'cypress/angular'
 
+import '@cypress/code-coverage/support';
+
+Cypress.on('window:before:load', (win: any) => {
+  win.__coverage__ = win.__coverage__ || {};
+});
 // Augment the Cypress namespace to include type definitions for
 // your custom command.
 // Alternatively, can be defined in cypress/support/component.d.ts
